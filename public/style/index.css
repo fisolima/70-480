@@ -1,0 +1,20 @@
+﻿body {
+}
+
+div,a {
+    font-family: OpenSans, Arial;
+    font-size: small;
+}
+
+h1 {
+    font-size: medium;
+}
+
+.linkContainer {
+    margin: 15px    
+}
+
+.groupContainer {
+    border-top: 2px solid #008b8b;
+    margin: 5px;
+}

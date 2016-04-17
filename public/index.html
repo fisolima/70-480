@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>70-480 Exercise</title>
+    <script src="lib/jquery-2.1.4.js"></script>
+    <link href="style/index.css" rel="stylesheet" />
+</head>
+<body>
+
+<script>
+
+    $(document).ready(function () {
+        $.ajax({
+            dataType: 'json',
+            url: '/pages',
+            success: function (data, status, xhr) {
+                BuildLinks(data, 'Exercises', document.body);
+            },
+            error: function(xhr, status, error) {
+                alert(status + ' - ' + JSON.stringify(error));
+            }
+        });
+    });
+
+    function CreateLink(name, address) {
+        var container = document.createElement("div");
+
+        container.setAttribute('class', 'linkContainer');
+
+        var link = document.createElement("a");
+
+        link.innerHTML = name; //'<p>' + name + '</p>';
+        link.setAttribute('href', address);
+
+        container.appendChild(link);
+
+        return container;
+    }
+
+    function CreateGroup(title) {
+        var groupContainer = document.createElement("div");
+        var titleElement = document.createElement("h1");
+
+        groupContainer.setAttribute('class', 'groupContainer');
+
+        titleElement.innerHTML = title; //'<p>' + title + '</p>';
+
+        groupContainer.appendChild(titleElement);
+
+        return groupContainer;
+    }
+
+    function BuildLinks(data, title, parent) {
+        var container = CreateGroup(title);
+
+        parent.appendChild(container);
+
+        data.forEach(function (node) {
+            if (node.address) {
+                container.appendChild(CreateLink(node.name, node.address));
+            }
+            else if (node.links) {
+                BuildLinks(node.links, node.name, container);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
