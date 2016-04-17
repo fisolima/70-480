@@ -45,7 +45,7 @@ router.get('/pages', function (req, res) {
                 var filePath = path.join(currentPath, fileName);
                 var stat = fs.statSync(filePath);
 
-                if (stat.isFile()) {
+                if (stat.isFile() && fileName.endsWith('.html')) {
                     var url = AbsolutePathToUrl(filePath);
                     currentPages.push({
                         name: fileName,

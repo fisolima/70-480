@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>DOM Manipulation</title>
+</head>
+<body>
+<div id="outerDiv">
+    <p class="mainPara">Main Paragraph</p>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+    </ul>
+    <div id="innerDiv">
+        <p class="subPara" id="p1">paragraph 1</p>
+        <p class="subPara" id="p2">paragraph 2</p>
+        <p class="subPara" id="p3">paragraph 3</p>
+        <p class="subPara" id="p4">paragraph 4</p>
+    </div>
+    <table>
+        <tr><td>Row1</td></tr>
+        <tr><td>Row2</td></tr>
+        <tr><td>Row3</td></tr>
+        <tr><td>Row4</td></tr>
+        <tr><td>Row5</td></tr>
+    </table>
+    <input type="text"/>
+    <input type="submit" value="Submit"/>
+</div>
+<button onclick="Show()">Show</button>
+<script>
+    function Show() {
+        //alert(document.getElementById('outerDiv').innerHTML);
+
+        //alert(document.getElementsByTagName('div').length);
+
+        //alert(document.getElementsByClassName('subPara').length);
+
+        //alert(document.querySelector('.mainPara').innerHTML);
+
+        //alert(document.querySelector('#outerDiv').innerHTML);
+
+        var outerDiv = document.getElementById('outerDiv');
+
+        //var element = document.getElementById('innerDiv');
+
+        //if (element)
+        //    outerDiv.removeChild(element);
+
+        //var newElem = document.createElement('article');
+
+        //newElem.innerHTML = "text of an article";
+
+        //outerDiv.appendChild(newElem);
+
+        var article = outerDiv.insertBefore(document.createElement('article'), document.getElementById('innerDiv'));
+
+        article.innerHTML = "Article added";
+
+        // no firefox
+        article.removeNode(true);
+    }
+</script>
+</body>
+</html>
