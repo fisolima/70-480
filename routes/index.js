@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 var fs = require('fs');
 
-/* GET home page. */
+
 router.get('/', function (req, res) {
 
     var indexPagePath = path.join(__dirname, 'public', 'index.html');
@@ -37,9 +37,8 @@ router.get('/pages', function (req, res) {
         level++;
 
         fs.readdir(currentPath, function(err, files) {
-            if (err) {
+            if (err)
                 throw new Error(err);
-            }
 
             files.forEach(function (fileName) {
                 var filePath = path.join(currentPath, fileName);
@@ -51,7 +50,8 @@ router.get('/pages', function (req, res) {
                         name: fileName,
                         address: url
                     });
-                } else if (stat.isDirectory()) {
+                }
+                else if (stat.isDirectory()) {
                     var nodeFolder = {
                         name: fileName,
                         links: []

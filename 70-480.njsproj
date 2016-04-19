@@ -31,15 +31,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\exercises\2.5\webWorker.js" />
     <Compile Include="public\lib\jquery-2.1.4.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
     <Content Include=".gitignore" />
     <Content Include="package.json" />
-    <Content Include="public\exercises\Chapter 1\DOM.html" />
-    <Content Include="public\exercises\Chapter 1\homework.html" />
-    <Content Include="public\exercises\Chapter 1\HTML5.html" />
-    <Content Include="public\exercises\Chapter 1\media.html" />
+    <Content Include="public\exercises\1.1 - 1.2\DOM.html" />
+    <Content Include="public\exercises\1.1 - 1.2\homework.html" />
+    <Content Include="public\exercises\1.1 - 1.2\HTML5.html" />
+    <Content Include="public\exercises\1.1 - 1.2\media.html" />
+    <Content Include="public\exercises\2.5\webworker.html" />
     <Content Include="public\img\avatar.png" />
     <Content Include="public\img\test.png" />
     <Content Include="public\index.html" />
@@ -53,7 +55,8 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="public\" />
-    <Folder Include="public\exercises\Chapter 1\" />
+    <Folder Include="public\exercises\1.1 - 1.2\" />
+    <Folder Include="public\exercises\2.5\" />
     <Folder Include="public\img\" />
     <Folder Include="public\lib\" />
     <Folder Include="public\exercises\" />
