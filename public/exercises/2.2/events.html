@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+    #dragDiv {
+        width: 200px;
+        height: 200px;
+        border: black 1px solid;
+        background-color: gray;
+        position: absolute;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;    
+        border: blue 1px solid;
+    }
+
+    #fullArea {
+        width: 100%;
+        height: 100vh;
+        border: red 1px solid;
+    }
+
+    </style>
+</head>
+<body>
+
+<div id="fullArea">
+    <div id="dragDiv" draggable="true"></div>
+</div>
+
+<script>
+
+    function DragStart(evt) {
+        var style = window.getComputedStyle(evt.target, null);
+        evt.dataTransfer.setData("text/plain",
+        (parseInt(style.getPropertyValue("left"), 10) - evt.clientX) + ',' + (parseInt(style.getPropertyValue("top"), 10) - evt.clientY));
+    }
+
+    function DragOver(evt) {
+        if (evt.preventDefault)
+            evt.preventDefault();
+
+        return false;
+    }
+
+    function Drop(evt) {
+        var dragDiv = document.getElementById('dragDiv');
+
+        var offset = evt.dataTransfer.getData("text/plain").split(',');
+
+        dragDiv.style.left = (evt.clientX + parseInt(offset[0], 10)) + 'px';
+        dragDiv.style.top = (evt.clientY + parseInt(offset[1], 10)) + 'px';
+
+        if (evt.preventDefault)
+            evt.preventDefault();
+
+        return false;
+    }
+
+    window.onload = function() {
+
+        var dragDiv = document.getElementById('dragDiv');
+
+        dragDiv.addEventListener('dragstart', DragStart, false);
+
+        document.body.addEventListener('dragover', DragOver, false);
+        document.body.addEventListener('drop', Drop, false);
+    };
+
+</script>
+</body>
+</html>

@@ -41,6 +41,8 @@
     <Content Include="public\exercises\1.1 - 1.2\homework.html" />
     <Content Include="public\exercises\1.1 - 1.2\HTML5.html" />
     <Content Include="public\exercises\1.1 - 1.2\media.html" />
+    <Content Include="public\exercises\2.2\events.html" />
+    <Content Include="public\exercises\2.4\websocket.html" />
     <Content Include="public\exercises\2.5\webworker.html" />
     <Content Include="public\img\avatar.png" />
     <Content Include="public\img\test.png" />
@@ -57,6 +59,8 @@
     <Folder Include="public\" />
     <Folder Include="public\exercises\1.1 - 1.2\" />
     <Folder Include="public\exercises\2.5\" />
+    <Folder Include="public\exercises\2.2\" />
+    <Folder Include="public\exercises\2.4\" />
     <Folder Include="public\img\" />
     <Folder Include="public\lib\" />
     <Folder Include="public\exercises\" />
