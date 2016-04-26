@@ -1,0 +1,41 @@
+﻿html, body {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 400px) {
+    #animation1 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        -webkit-transition: background-color 1s, height 1s;
+        -moz-transition: background-color 1s, height 1s;
+        -ms-transition: background-color 1s, height 1s;
+        -o-transition: background-color 1s, height 1s;
+        transition: background-color 1s, height 1s;
+    }
+
+    #animation1:hover {
+        height: 150px;
+        background-color: red;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    #animation1 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        -webkit-transition: background-color 1s, height 1s;
+        -moz-transition: background-color 1s, height 1s;
+        -ms-transition: background-color 1s, height 1s;
+        -o-transition: background-color 1s, height 1s;
+        transition: background-color 1s, height 1s;
+    }
+
+    #animation1:hover {
+        height: 150px;
+        background-color: yellow;
+    }
+}
